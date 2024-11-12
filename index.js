@@ -53,7 +53,7 @@ app.post("/api/products", (req, res) =>{
     const unitprice = req.body.unitprice; //DelaCruz
     const quantity = req.body.quantity; //juan@gmail.com
     const supplier =req.body.supplier; //male
-    connection.query(INSERT INTO product (itemName, unitPrice, quantity, supplier) VALUES ('${itemname}','${unitprice}','${quantity}','${supplier}'),
+    connection.query(INSERT INTO 1 (itemName, unitPrice, quantity, supplier) VALUES ('${itemname}','${unitprice}','${quantity}','${supplier}'),
         (err,rows,fields)=>{
             if(err) throw err;
             res.json({msg: `Succesfully insert`})
@@ -68,7 +68,7 @@ app.put("/api/products",(req,res) =>{S
     const quantity = req.body.quantity; //juan@gmail.com
     const supplier =req.body.supplier; //male
     const id=req.body.id;
-    connection.query(UPDATE product SET itemName='${itemname}', unitPrice='${unitprice}',quantity='${quantity}',supplier='${supplier}' WHERE id='${id}',(err,rows,fields)=>{
+    connection.query(UPDATE 1 SET itemName='${itemname}', unitPrice='${unitprice}',quantity='${quantity}',supplier='${supplier}' WHERE id='${id}',(err,rows,fields)=>{
         if(err) throw err
         res.json({msg: `Successfully Updated!`})
     })
