@@ -16,16 +16,16 @@ app.use(logger);
 
 
 const connection = mysql.createConnection({
-    host: "bmix5lkljpjozaesn25j-mysql.services.clever-cloud.com",
-    user: "ucxd8z4ufrksc4cm",
-    password: "pTZyaV36KWhUUaIkL3mE",
-    database: "bmix5lkljpjozaesn25j",
+    host: "b7zfmrogncwdyqquuodk-mysql.services.clever-cloud.com",
+    user: "ufkbkbvbqtfmndax",
+    password: "4EyiPkcT7ZLuhbXlWMB4",
+    database: "b7zfmrogncwdyqquuodk",
 });
 
 connection.connect();
 //REPORT-CRUD
 app.get("/api/products", (req,res) =>{
-    connection.query("SELECT * FROM product",(err,rows,fields) =>{
+    connection.query("SELECT * FROM 1",(err,rows,fields) =>{
         if(err) throw err;
         res.json(rows)
     })
@@ -35,7 +35,7 @@ app.get("/api/products", (req,res) =>{
 app.get("/api/products/:id", (req,res) =>{
     const id=req.params.id
     //res.send(id)
-    connection.query(SELECT * FROM product WHERE id=${id}, (err,rows, fields)=>{
+    connection.query(SELECT * FROM 1 WHERE id=${id}, (err,rows, fields)=>{
         if(err) throw err
         if(rows.lenght > 0){
         res.json(rows)
@@ -79,7 +79,7 @@ app.put("/api/products",(req,res) =>{S
 app.use(express.urlencoded({extended:false}))
 app.delete("/api/products",(req,res) =>{
     const id=req.body.id;
-    HTMLFormControlsCollection.query(DELETE FROM product WHERE id='${id}'),(err,rows,fields)=>{
+    HTMLFormControlsCollection.query(DELETE FROM 1 WHERE id='${id}'),(err,rows,fields)=>{
         if(err) throw err;
         res.json({msg: `Succesfully Deleted`})
     }
