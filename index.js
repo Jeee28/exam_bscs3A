@@ -29,7 +29,7 @@ connection.connect();
 
 //API - REPORT
 //GET request and response are the parameters
-app.get("/exam/mem", (req, res) =>{
+app.get("/api/products", (req, res) =>{
     //create a query
     connection.query("SELECT * FROM 1 ",(err, rows, fields)=>{
         //checking errors
@@ -43,7 +43,7 @@ app.get("/exam/mem", (req, res) =>{
 //API - REPORT - SEARCH
 //passing the id parameter
 //request - >>> front-end ID
-app.get("/exam/mem/:id",(req, res)=>{
+app.get("/api/products:id",(req, res)=>{
     const id1=req.params.id; 
     connection.query(`SELECT * FROM 1 WHERE id='${id1}'`, (err, rows, fields)=>{
         if(err) throw err;
@@ -60,7 +60,7 @@ app.get("/exam/mem/:id",(req, res)=>{
 
 //POST - CREATE
 app.use(express.urlencoded({extended: false}))
-app.post("/exam/mem", (req, res)=>{
+app.post("/api/products", (req, res)=>{
     const item = req.body.item;
   const price = req.body.price;
   const quan = req.body.quan;
@@ -76,7 +76,7 @@ app.post("/exam/mem", (req, res)=>{
 //API
 //PUT - UPDATE
 app.use(express.urlencoded({ extended: false }));
-app.put("/exam/mem", (req, res) => {
+app.put("/api/products", (req, res) => {
   const item = req.body.item;
   const price = req.body.price;
   const quan = req.body.quan;
@@ -93,7 +93,7 @@ app.put("/exam/mem", (req, res) => {
 
 //DELETE API
 app.use(express.urlencoded({ extended: false }));
-app.delete("/exam/mem", (req, res) =>{
+app.delete("/api/products", (req, res) =>{
     const id1=req.body.id;
     connection.query(`DELETE FROM 1 WHERE id='${id1}'`, (err, rows, fields)=>{
         if(err) throw err
