@@ -51,7 +51,7 @@ app.get("/Exam/mem/:id",(req, res)=>{
         if(rows.length > 0){
             res.json(rows);
         }else{
-            res.status(400).json({msg: `${id} id not found!`})
+            res.status(400).json({msg: `${id1} id not found!`})
         }
     })
     //res.send(id);
