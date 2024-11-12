@@ -17,9 +17,9 @@ const logger = (req, res, next) =>{
 app.use(logger)
 //connection to mysql
 const connection = mysql.createConnection({
-    host: "localhost",
-    user: "root",
-    password: "",
+    host: "b7zfmrogncwdyqquuodk-mysql.services.clever-cloud.com",
+    user: "ufkbkbvbqtfmndax",
+    password: "4EyiPkcT7ZLuhbXlWMB4",
     database: "b7zfmrogncwdyqquuodk",
 });
 
@@ -31,7 +31,7 @@ connection.connect();
 //GET request and response are the parameters
 app.get("/Exam/mem", (req, res) =>{
     //create a query
-    connection.query("SELECT * FROM userdata",(err, rows, fields)=>{
+    connection.query("SELECT * FROM 1 ",(err, rows, fields)=>{
         //checking errors
         if(err) throw err;
         //response
